@@ -1,10 +1,10 @@
-# Coverage
+# Coverage reports
 coverage/
 
-# Build
-/build/
+# Build output
+dist/
 
-# Yarn
+# Yarn (PnP cache + configs)
 .yarn/*
 !.yarn/patches
 !.yarn/plugins
@@ -12,12 +12,15 @@ coverage/
 !.yarn/sdks
 !.yarn/versions
 
-# VSCode
+# VS Code workspace settings
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 
-# Misc
+# Misc system files
 .DS_Store
 Thumbs.db
+
+# Node linker safety
+node_modules/
