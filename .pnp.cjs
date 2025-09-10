@@ -28,6 +28,7 @@ const RAW_RUNTIME_STATE =
       [null, {\
         "packageLocation": "./",\
         "packageDependencies": [\
+          ["@types/node", "npm:24.3.1"],\
           ["@types/react", "npm:19.1.12"],\
           ["@types/react-dom", "virtual:c4c21ab8c6a92bd60086a38524ee02213499fa207bf5b8194bfdb19d058dfcc9d975101e6f4ae90bcb45158cc6025804c12b646accd9f7559e1f40039b3b6c33#npm:19.1.9"],\
           ["@vitejs/plugin-react-swc", "virtual:c4c21ab8c6a92bd60086a38524ee02213499fa207bf5b8194bfdb19d058dfcc9d975101e6f4ae90bcb45158cc6025804c12b646accd9f7559e1f40039b3b6c33#npm:4.0.1"],\
@@ -691,6 +692,16 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@types/node", [\
+      ["npm:24.3.1", {\
+        "packageLocation": "./.yarn/cache/@types-node-npm-24.3.1-b558101365-10c9.zip/node_modules/@types/node/",\
+        "packageDependencies": [\
+          ["@types/node", "npm:24.3.1"],\
+          ["undici-types", "npm:7.10.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@types/react", [\
       ["npm:19.1.12", {\
         "packageLocation": "./.yarn/cache/@types-react-npm-19.1.12-d97634a5ed-10c9.zip/node_modules/@types/react/",\
@@ -1210,6 +1221,7 @@ const RAW_RUNTIME_STATE =
       ["workspace:.", {\
         "packageLocation": "./",\
         "packageDependencies": [\
+          ["@types/node", "npm:24.3.1"],\
           ["@types/react", "npm:19.1.12"],\
           ["@types/react-dom", "virtual:c4c21ab8c6a92bd60086a38524ee02213499fa207bf5b8194bfdb19d058dfcc9d975101e6f4ae90bcb45158cc6025804c12b646accd9f7559e1f40039b3b6c33#npm:19.1.9"],\
           ["@vitejs/plugin-react-swc", "virtual:c4c21ab8c6a92bd60086a38524ee02213499fa207bf5b8194bfdb19d058dfcc9d975101e6f4ae90bcb45158cc6025804c12b646accd9f7559e1f40039b3b6c33#npm:4.0.1"],\
@@ -1719,6 +1731,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["undici-types", [\
+      ["npm:7.10.0", {\
+        "packageLocation": "./.yarn/cache/undici-types-npm-7.10.0-cd8324b9eb-10c9.zip/node_modules/undici-types/",\
+        "packageDependencies": [\
+          ["undici-types", "npm:7.10.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["unique-filename", [\
       ["npm:4.0.0", {\
         "packageLocation": "./.yarn/cache/unique-filename-npm-4.0.0-bfc100c4e3-10c9.zip/node_modules/unique-filename/",\
@@ -1753,7 +1774,7 @@ const RAW_RUNTIME_STATE =
           ["@types/jiti", null],\
           ["@types/less", null],\
           ["@types/lightningcss", null],\
-          ["@types/node", null],\
+          ["@types/node", "npm:24.3.1"],\
           ["@types/sass", null],\
           ["@types/sass-embedded", null],\
           ["@types/stylus", null],\

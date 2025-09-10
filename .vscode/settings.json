@@ -7,7 +7,9 @@
   },
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
-  "eslint.workingDirectories": ["./"],
+  "eslint.workingDirectories": [
+    "./"
+  ],
   "files.eol": "\n",
   "editor.formatOnSave": true
 }
