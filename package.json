@@ -1,0 +1,45 @@
+{
+  "name": "minimal-react-project",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A minimal React + TypeScript project bootstrapped with Vite and Yarn 4.",
+  "main": "src/main.tsx",
+  "homepage": "https://github.com/kha1ne/minimal-react-project",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kha1ne/minimal-react-project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kha1ne/minimal-react-project/issues"
+  },
+  "author": "Marko Maric <mmaric@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "typescript",
+    "vite",
+    "yarn4",
+    "pnp",
+    "minimal",
+    "frontend",
+    "boilerplate",
+    "starter"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "@vitejs/plugin-react-swc": "^4.0.1",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.5"
+  },
+  "packageManager": "yarn@4.9.4"
+}

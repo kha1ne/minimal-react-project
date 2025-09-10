@@ -1,9 +1,9 @@
 # Minimal React Project
 
-A simple **Minimal React Project application** built with React and TypeScript.
+A simple **Minimal React Project application** built with React and TypeScript.  
 This project is intended to be a minimal barebone setup with essential dependencies for building and testing a React application using TypeScript.
 
-It is bootstrapped with Create React App and configured for **Yarn 4 (Berry)**.
+It is bootstrapped with **Vite** and configured for **Yarn 4 (Berry, Plug’n’Play)**.
 
 ## Table of Contents
 
@@ -13,25 +13,31 @@ It is bootstrapped with Create React App and configured for **Yarn 4 (Berry)**.
   - [Installation](#installation)
   - [Running the App](#running-the-app)
   - [Building the App](#building-the-app)
-- [Testing](#testing)
-- [Project Structure](#project-structure)
+  - [Previewing the Build](#previewing-the-build)
 - [Scripts](#scripts)
+- [Project Structure](#project-structure)
+- [CRA vs Vite Scripts](#cra-vs-vite-scripts)
 - [License](#license)
 
 ## Overview
 
-This repository contains a minimal React + TypeScript setup using the latest Yarn (v4).  
+This repository contains a minimal React + TypeScript setup using the latest **Vite** and **Yarn 4 (PnP mode)**.  
 It’s intentionally barebones and serves as a starting point for step-by-step customization.
 
-The project includes configurations for testing with **Jest** and **Testing Library**,
-as well as Babel plugins for handling modern JavaScript features.
+The project is optimized for modern development:
+
+- ⚡ Fast dev server powered by Vite.
+- 📦 Plug’n’Play dependency management with Yarn 4.
+- 🔒 Reproducible installs via `yarn.lock` and `.pnp.cjs`.
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js **18+** (recommended)
-- Yarn **4.x** (Berry)
+Ensure you have the following installed:
+
+- Node.js **24+** (recommended)
+- Yarn **4.x** (Berry, PnP)
 
 ### Installation
 
@@ -42,10 +48,10 @@ yarn install
 ### Running the App
 
 ```bash
-yarn start
+yarn dev
 ```
 
-This starts the development server at <http://localhost:3000>.
+This starts the Vite development server at <http://localhost:5173>.
 
 ### Building the App
 
@@ -53,15 +59,21 @@ This starts the development server at <http://localhost:3000>.
 yarn build
 ```
 
-Output is placed in the `/build` directory.
+Output is placed in the `/dist` directory.
 
-## Testing
+### Previewing the Build
 
 ```bash
-yarn test
+yarn preview
 ```
 
-Runs tests with Jest and Testing Library.
+This serves the production build locally for testing.
+
+## Scripts
+
+- `yarn dev` – Start the development server
+- `yarn build` – Build for production (output in `/dist`)
+- `yarn preview` – Preview the production build locally
 
 ## Project Structure
 
@@ -70,21 +82,15 @@ minimal-react-project/
 ├── public/             # Static assets
 ├── src/                # Application source code
 │   ├── components/     # React components
-│   ├── __tests__/      # Test files
+│   ├── __tests__/      # Test files (optional if added later)
 │   ├── App.tsx         # Main app component
-│   ├── index.tsx       # Entry point for React
-│   └── setupTests.ts   # Jest setup file
+│   ├── main.tsx        # Entry point for React (Vite)
+│   └── setupTests.ts   # Jest setup file (if tests added)
 ├── package.json        # Project metadata and dependencies
 ├── tsconfig.json       # TypeScript configuration
+├── vite.config.ts      # Vite configuration
 └── .yarn/              # Yarn 4 files
 ```
-
-## Scripts
-
-- `yarn start` – Start dev server
-- `yarn build` – Build for production
-- `yarn test` – Run tests
-- `yarn lint` – (optional) Run linter if configured
 
 ## License
 

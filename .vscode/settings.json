@@ -1,0 +1,13 @@
+{
+  "search.exclude": {
+    "**/.yarn": true,
+    "**/.pnp.*": true,
+    "**/dist": true,
+    "**/coverage": true
+  },
+  "typescript.tsdk": ".yarn/sdks/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "eslint.workingDirectories": ["./"],
+  "files.eol": "\n",
+  "editor.formatOnSave": true
+}
