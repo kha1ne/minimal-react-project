@@ -40,5 +40,15 @@ export default defineConfig({
       "@types": resolve(__dirname, "src/types"),
       "@utils": resolve(__dirname, "src/utils")
     }
+  },
+  test: {
+    environment: "jsdom",
+    setupFiles: "./src/setupTests.ts",
+    globals: true,
+    css: true,
+    coverage: {
+      include: ["src/**/*.{ts,tsx}"],
+      exclude: ["src/env.d.ts", "src/main.tsx", "src/pwa.ts"]
+    }
   }
 });

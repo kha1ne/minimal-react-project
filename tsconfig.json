@@ -21,7 +21,7 @@
       "@types/*": ["types/*"],
       "@utils/*": ["utils/*"]
     },
-    "types": ["vite/client", "node"],
+    "types": ["vite/client", "vitest/globals", "node"],
     "resolveJsonModule": true
   },
   "include": ["src", "vite.config.ts"]
