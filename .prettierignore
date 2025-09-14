@@ -1,7 +1,14 @@
+# Ignore dependencies
 node_modules/
+.yarn/
+
+# Ignore build and coverage outputs
 dist/
 coverage/
-.yarn/
+
+# Ignore IDE/editor settings
 .vscode/
+
+# Ignore Yarn Plug'n'Play files
 .pnp.cjs
 .pnp.loader.mjs
