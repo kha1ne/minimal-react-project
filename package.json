@@ -1,0 +1,60 @@
+{
+  "name": "minimal-react-project",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A minimal React + TypeScript project bootstrapped with Vite and Yarn 4.",
+  "main": "src/main.tsx",
+  "homepage": "https://github.com/kha1ne/minimal-react-project",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kha1ne/minimal-react-project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kha1ne/minimal-react-project/issues"
+  },
+  "author": "Marko Maric <mmaric@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "typescript",
+    "vite",
+    "yarn4",
+    "pnp",
+    "minimal",
+    "frontend",
+    "boilerplate",
+    "starter"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "workbox-window": "^7.3.0"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.8.0",
+    "@testing-library/react": "^16.3.0",
+    "@types/node": "^24.4.0",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react-swc": "^4.0.1",
+    "@vitest/coverage-v8": "3.2.4",
+    "jsdom": "^27.0.0",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.5",
+    "vite-plugin-pwa": "^1.0.3",
+    "vitest": "^3.2.4"
+  },
+  "packageManager": "yarn@4.9.4"
+}
