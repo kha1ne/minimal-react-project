@@ -1,8 +1,10 @@
+import "./pwa";
+import "./index.css";
+
 import React from "react";
 import { createRoot } from "react-dom/client";
-import "./pwa";
+
 import App from "./App";
-import "./index.css";
 
 const root = document.getElementById("root")!;
 

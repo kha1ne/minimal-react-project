@@ -12,5 +12,6 @@
   ],
   "files.eol": "\n",
   "editor.formatOnSave": true,
-  "prettier.prettierPath": ".yarn/sdks/prettier/index.cjs"
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.cjs",
+  "eslint.nodePath": ".yarn/sdks"
 }

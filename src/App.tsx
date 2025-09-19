@@ -1,4 +1,5 @@
 import type { FC } from "react";
+
 import sampleImage from "./assets/images/sample.png";
 
 const App: FC = () => {
