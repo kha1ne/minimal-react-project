@@ -1,16 +1,16 @@
+# Dependencies
+node_modules/
+
 # Coverage reports
 coverage/
 
 # Build output
 dist/
 
-# Yarn (PnP cache + configs)
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
+# Yarn cache (optional - can be shared)
+.yarn/cache/
+.yarn/install-state.gz
+.yarn/unplugged/
 
 # VS Code workspace settings
 .vscode/*
@@ -21,6 +21,3 @@ dist/
 # Misc system files
 .DS_Store
 Thumbs.db
-
-# Node linker safety
-node_modules/

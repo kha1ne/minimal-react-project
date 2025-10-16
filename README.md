@@ -1,6 +1,6 @@
 # Minimal React Project
 
-A minimal React + TypeScript project using **Vite** and **Yarn 4 (Berry, PnP)**. It’s intentionally barebones and designed for step-by-step customization. Optional **PWA** support is included via `vite-plugin-pwa`. Unit tests use **Vitest** and **Testing Library**.
+A minimal React + TypeScript project using **Vite** and **Yarn 4**. It's intentionally barebones and designed for step-by-step customization. Optional **PWA** support is included via `vite-plugin-pwa`. Unit tests use **Vitest** and **Testing Library**.
 
 ## Table of Contents
 
@@ -22,24 +22,21 @@ A minimal React + TypeScript project using **Vite** and **Yarn 4 (Berry, PnP)**.
 
 ## Overview
 
-This repository contains a minimal React + TypeScript setup using the latest **Vite** and **Yarn 4 (PnP mode)**.  
-It’s intentionally barebones and serves as a starting point for step-by-step customization.
+This repository contains a minimal React + TypeScript setup using the latest **Vite** and **Yarn 4**.  
+It's intentionally barebones and serves as a starting point for step-by-step customization.
 
 The project is optimized for modern development:
 
 - ⚡ Fast dev server powered by Vite.
-- 📦 Plug’n’Play dependency management with Yarn 4.
-- 🔒 Reproducible installs via `yarn.lock` and `.pnp.cjs`.
+- 📦 Modern dependency management with Yarn 4.
+- 🔒 Reproducible installs via `yarn.lock`.
 
 ## Getting Started
 
 ### Prerequisites
 
 - **Node.js**: 24+ (LTS works too)
-- **Yarn**: 4.9.4 (Berry, Plug’n’Play)
-
-> Tip (VS Code + PnP):  
-> Run `yarn dlx @yarnpkg/sdks vscode` once, and ensure your workspace uses `.yarn/sdks/typescript/lib`.
+- **Yarn**: 4.9.4+
 
 ### Installation
 
@@ -144,7 +141,7 @@ minimal-react-project/
 │   └── utils/       (.gitkeep)
 ├── tsconfig.json
 ├── vite.config.ts
-└── .yarn/            # Yarn 4 (PnP) – cache ignored, sdks/plugins committed
+└── node_modules/     # Dependencies installed here
 ```
 
 ## Path Aliases
@@ -166,7 +163,7 @@ import { formatDate } from "@utils/date";
 
 - Global types: `tsconfig.json` includes `"types": ["vite/client", "vitest/globals", "node"]`.
 - Test setup: `src/setupTests.ts` imports `@testing-library/jest-dom`.
-- VS Code: `.yarn/sdks` is used for TypeScript; ensure workspace points there.
+- VS Code: Standard TypeScript integration with node_modules.
 
 ## Notes on Ports
 
