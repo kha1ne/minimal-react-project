@@ -2,6 +2,7 @@
   "name": "minimal-react-project",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "description": "A minimal React + TypeScript project bootstrapped with Vite and Yarn.",
   "main": "src/main.tsx",
   "homepage": "https://github.com/kha1ne/minimal-react-project",
@@ -28,13 +29,17 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint src",
-    "lint:fix": "eslint src --fix",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:check": "eslint . --max-warnings=0",
+    "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "test": "vitest",
     "test:run": "vitest run",
-    "test:coverage": "vitest run --coverage"
+    "test:watch": "vitest --watch",
+    "test:coverage": "vitest run --coverage",
+    "test:ci": "vitest run --coverage --reporter=verbose"
   },
   "dependencies": {
     "react": "^19.2.0",

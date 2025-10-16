@@ -2,49 +2,44 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Run App",
-      "type": "node",
-      "request": "launch",
-      "runtimeExecutable": "yarn",
-      "args": ["start"],
-      "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen",
-      "cwd": "${workspaceFolder}",
-      "env": {
-        "NODE_ENV": "development"
-      }
-    },
-    {
-      "name": "Launch/Debug in Chrome",
+      "name": "Debug React App",
       "type": "chrome",
       "request": "launch",
-      "url": "http://localhost:3000",
-      "cwd": "${workspaceFolder}",
-      "skipFiles": [
-        "<node_internals>/**/*.js",
-        "node_modules/**/*.js",
-        "node_modules/**/*.ts",
-        "**/*.d.ts"
-      ],
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/src",
       "sourceMaps": true,
-      "webRoot": "${workspaceFolder}",
-      "sourceMapPathOverrides": {
-        "webpack:///src/*": "${webRoot}/src/*",
-        "webpack:///./*": "${webRoot}/*",
-        "webpack:///./~/*": "${webRoot}/node_modules/*"
+      "skipFiles": ["<node_internals>/**", "node_modules/**"],
+      "env": {
+        "NODE_ENV": "development",
+        "VITE_LOG_LEVEL": "DEBUG",
+        "VITE_LOG_TIMESTAMP": "true"
       }
     },
     {
-      "name": "Debug Jest Tests",
+      "name": "Debug Vitest Tests",
       "type": "node",
       "request": "launch",
-      "runtimeExecutable": "yarn",
-      "args": ["test", "--runInBand", "--coverage=false"],
+      "runtimeExecutable": "${userHome}/.nvm/nvm-exec",
+      "runtimeArgs": ["yarn", "test", "--run"],
       "cwd": "${workspaceFolder}",
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
+      "skipFiles": ["<node_internals>/**", "node_modules/**"],
       "env": {
-        "CI": "true",
+        "NODE_ENV": "test"
+      }
+    },
+    {
+      "name": "Debug Current Test File",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "${userHome}/.nvm/nvm-exec",
+      "runtimeArgs": ["yarn", "test", "${fileBasename}", "--run"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": ["<node_internals>/**", "node_modules/**"],
+      "env": {
         "NODE_ENV": "test"
       }
     }

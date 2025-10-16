@@ -1,80 +1,76 @@
-// @ts-check
 import eslint from "@eslint/js";
-import tseslint from "typescript-eslint";
+import jsxA11y from "eslint-plugin-jsx-a11y";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
-import jsxA11y from "eslint-plugin-jsx-a11y";
+import simpleImportSort from "eslint-plugin-simple-import-sort";
 import vitest from "eslint-plugin-vitest";
 import globals from "globals";
-import simpleImportSort from "eslint-plugin-simple-import-sort";
-import { defineConfig } from "eslint/config";
+import tseslint from "typescript-eslint";
 
-export default defineConfig(
-  // Application source files only
+export default tseslint.config(
   {
-    files: ["src/**/*.{ts,tsx,js,jsx}"],
-    ignores: [".vscode/**", ".yarn/**", "coverage/**", "dist/**", "node_modules/**", "public/**"],
-
+    ignores: ["dist/**", "coverage/**", "node_modules/**", ".yarn/**"],
+  },
+  {
+    files: ["**/*.{ts,tsx,js,jsx}"],
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "module",
       globals: { ...globals.browser },
-      parserOptions: {
-        projectService: true, // enables type-aware linting
-      },
+      parserOptions: { projectService: true },
     },
-
     plugins: {
       "react-hooks": reactHooks,
       "react-refresh": reactRefresh,
       "simple-import-sort": simpleImportSort,
       "jsx-a11y": jsxA11y,
     },
-
     extends: [eslint.configs.recommended, ...tseslint.configs.recommendedTypeChecked],
-
     rules: {
-      // --- React hygiene ---
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
       "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
-
-      // --- Accessibility ---
       "jsx-a11y/alt-text": "warn",
       "jsx-a11y/anchor-is-valid": "warn",
       "jsx-a11y/aria-unsupported-elements": "warn",
       "jsx-a11y/no-autofocus": "warn",
-
-      // --- Import sorting ---
       "simple-import-sort/imports": "warn",
       "simple-import-sort/exports": "warn",
-
-      // --- TS-aware unused vars & shadowing ---
       "no-unused-vars": "off",
       "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_", varsIgnorePattern: "^_" }],
       "no-shadow": "off",
       "@typescript-eslint/no-shadow": "error",
       "no-redeclare": "off",
       "@typescript-eslint/no-redeclare": "error",
+      "@typescript-eslint/explicit-function-return-type": "off",
+      "@typescript-eslint/no-explicit-any": "warn",
+      "@typescript-eslint/no-empty-function": "error",
+      "@typescript-eslint/no-namespace": "off",
+      "@typescript-eslint/no-non-null-assertion": "off",
+      "no-use-before-define": "off",
+      eqeqeq: ["error", "smart"],
+      "max-params": ["error", 7],
+      "object-shorthand": "error",
+      "prefer-template": "warn",
+      "max-len": ["error", { code: 150, ignoreUrls: true, ignoreStrings: true }],
     },
   },
-
-  // Vitest test files
   {
-    files: ["src/**/*.{test,spec}.{ts,tsx,js,jsx}"],
+    files: ["tests/**/*.{ts,tsx,js,jsx}", "src/**/*.{test,spec}.{ts,tsx,js,jsx}"],
     plugins: { vitest },
     languageOptions: {
-      globals: {
-        ...globals.browser,
-        ...globals.es2021,
-        ...globals.node,
-        ...globals.vitest,
-      },
+      globals: { ...globals.browser, ...globals.es2021, ...globals.node, ...globals.vitest },
     },
     rules: {
       "vitest/no-focused-tests": "error",
       "vitest/no-disabled-tests": "warn",
       "vitest/no-identical-title": "error",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-unsafe-assignment": "off",
+      "@typescript-eslint/no-unsafe-member-access": "off",
+      "@typescript-eslint/no-unsafe-call": "off",
+      "@typescript-eslint/no-unsafe-return": "off",
+      "max-len": "off",
     },
   }
 );
