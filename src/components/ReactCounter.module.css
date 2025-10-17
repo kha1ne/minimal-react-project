@@ -1,0 +1,55 @@
+.container {
+  padding: 1.5rem;
+  border: 2px solid #10b981;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+  color: #064e3b;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.count {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  background: white;
+  color: #10b981;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+.label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+}

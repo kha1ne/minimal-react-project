@@ -1,6 +1,6 @@
 # Minimal React Project
 
-A minimalist, well-structured React + TypeScript project built with Vite, following modern development practices and clean architecture principles.
+A minimalist, well-structured React + Lit hybrid project built with Vite, TypeScript, and modern web standards. Showcases seamless integration of React components and Lit web components following clean architecture principles.
 
 ## 🚀 Features
 
@@ -9,6 +9,8 @@ A minimalist, well-structured React + TypeScript project built with Vite, follow
 - **Vite 7.1.10** - Lightning-fast dev server and build tool
 - **Node.js 24.10.0** - Latest LTS Node.js runtime
 - **Yarn Berry 4.10.3** - Modern package management with node_modules
+- **Lit 3.3.1** - Web Components with Shadow DOM isolation
+- **@lit-labs/react** - Seamless Lit-React interop
 - **Path Aliases** - Clean imports using `@components`, `@utils`, etc.
 - **Vitest 3.2.4** - Modern testing framework with coverage
 - **Testing Library** - React testing best practices
@@ -28,6 +30,7 @@ A minimalist, well-structured React + TypeScript project built with Vite, follow
   - [Building the App](#building-the-app)
   - [Previewing the Build](#previewing-the-build)
 - [Scripts](#scripts)
+- [Lit Web Components](#lit-web-components)
 - [Testing](#testing-vitest--testing-library)
 - [PWA / Offline](#pwa--offline-optional)
 - [Project Structure](#project-structure)
@@ -40,12 +43,13 @@ A minimalist, well-structured React + TypeScript project built with Vite, follow
 
 ## Overview
 
-This repository contains a minimal React + TypeScript setup using the latest **Vite** and **Yarn 4**.  
-It's intentionally barebones and serves as a starting point for step-by-step customization.
+This repository showcases a **hybrid component architecture** combining React 19 and Lit 3 web components, built with the latest **Vite** and **Yarn 4**.  
+It demonstrates best practices for integrating framework-specific React components with framework-agnostic Lit web components in a single application.
 
 The project is optimized for modern development:
 
 - ⚡ Fast dev server powered by Vite.
+- 🧩 Hybrid architecture: React + Lit components working seamlessly together.
 - 📦 Modern dependency management with Yarn 4.
 - 🔒 Reproducible installs via `yarn.lock`.
 
@@ -111,7 +115,151 @@ Serves the `/dist` folder locally (http://localhost:4173).
 | `yarn test:coverage` | Run tests with coverage report                  |
 | `yarn test:ci`       | Run tests with coverage and verbose output      |
 
-## 🧪 Testing
+## � Lit Web Components
+
+This project integrates **Lit** web components with React using **@lit-labs/react**, providing true Shadow DOM isolation and framework-agnostic components.
+
+### Why Lit + React?
+
+- **Framework Agnostic**: Lit components work in any framework or vanilla JS
+- **Shadow DOM Isolation**: Styles are scoped and don't leak
+- **Small Bundle Size**: Lit is lightweight (~5KB minified + gzipped)
+- **Web Standards**: Built on native Custom Elements API
+- **Type Safety**: Full TypeScript support with decorators
+- **Interoperability**: Seamless React integration via @lit-labs/react
+
+### Included Example Components
+
+#### SimpleGreeting Component
+
+A basic greeting component demonstrating property binding and styling:
+
+```tsx
+import { SimpleGreeting } from "@components";
+
+function MyApp() {
+  return <SimpleGreeting name='Developer' />;
+}
+```
+
+**Features:**
+
+- Shadow DOM with scoped styles
+- Property binding with `@property` decorator
+- Gradient background with custom styling
+
+#### SimpleCounter Component
+
+An interactive counter demonstrating state management and custom events:
+
+```tsx
+import { SimpleCounter } from "@components";
+
+function MyApp() {
+  const [count, setCount] = useState(0);
+
+  const handleCountChanged = (event: Event) => {
+    const customEvent = event as CustomEvent<{ count: number }>;
+    setCount(customEvent.detail.count);
+  };
+
+  return <SimpleCounter count={count} onCountChanged={handleCountChanged} />;
+}
+```
+
+**Features:**
+
+- Interactive buttons (increment, decrement, reset)
+- Custom events with `count-changed` event
+- React state synchronization
+- Styled with yellow gradient theme
+
+### Creating New Lit Components
+
+1. **Create the Lit component** in `src/components/`:
+
+```typescript
+// MyComponent.ts
+import { LitElement, css, html } from "lit";
+import { customElement, property } from "lit/decorators.js";
+
+@customElement("my-component")
+export class MyComponent extends LitElement {
+  static styles = css`
+    :host {
+      display: block;
+      padding: 1rem;
+    }
+  `;
+
+  @property({ type: String })
+  message = "Hello";
+
+  render() {
+    return html`<p>${this.message}</p>`;
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    "my-component": MyComponent;
+  }
+}
+```
+
+2. **Create React wrapper** in `src/components/LitComponents.tsx`:
+
+```typescript
+import { createComponent } from "@lit/react";
+import React from "react";
+import { MyComponent as MyComponentWC } from "./MyComponent.js";
+
+export const MyComponent = createComponent({
+  tagName: "my-component",
+  elementClass: MyComponentWC,
+  react: React,
+  events: {
+    // Map custom events to React props
+    onMyEvent: "my-event",
+  },
+});
+```
+
+3. **Export from index** in `src/components/index.ts`:
+
+```typescript
+export { MyComponent } from "./LitComponents";
+export type { MyComponent as MyComponentElement } from "./MyComponent";
+```
+
+### TypeScript Configuration
+
+Lit decorators require specific TypeScript settings (already configured):
+
+```json
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false
+  }
+}
+```
+
+### Best Practices
+
+- **Use Shadow DOM**: Leverage Lit's encapsulation for style isolation
+- **Type Events**: Define custom event types for better React integration
+- **Arrow Functions**: Use arrow functions for event handlers to avoid `this` binding issues
+- **Small Components**: Keep components focused and composable
+- **Test in Browser**: Lit components work best tested in actual browser environments
+
+### Resources
+
+- [Lit Documentation](https://lit.dev/)
+- [Lit Labs React](https://github.com/lit/lit/tree/main/packages/labs/react)
+- [Web Components Basics](https://developer.mozilla.org/en-US/docs/Web/Web_Components)
+
+## �🧪 Testing
 
 This project uses **Vitest** and **Testing Library** for comprehensive test coverage.
 
@@ -504,13 +652,16 @@ fnm use 24.10.0
 
 - **react** `^19.2.0` - React library
 - **react-dom** `^19.2.0` - React DOM renderer
+- **lit** `^3.3.1` - Web Components library
 - **workbox-window** `^7.3.0` - Service worker runtime (PWA)
 
 ### Development Dependencies
 
 - **vite** `^7.1.10` - Build tool and dev server
 - **typescript** `^5.9.3` - TypeScript compiler
-- **@vitejs/plugin-react-swc** `^4.1.0` - React Fast Refresh with SWC
+- **@vitejs/plugin-react** `^5.0.4` - React Fast Refresh with Babel (supports decorators)
+- **lit** `^3.3.1` - Web Components library
+- **@lit-labs/react** `^2.1.3` - Lit-React interop wrapper
 - **vitest** `^3.2.4` - Test framework
 - **@vitest/coverage-v8** `3.2.4` - Coverage provider
 - **@testing-library/react** `^16.3.0` - React testing utilities

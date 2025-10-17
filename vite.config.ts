@@ -1,7 +1,7 @@
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import react from "@vitejs/plugin-react-swc";
+import react from "@vitejs/plugin-react";
 import { defineConfig, loadEnv } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
 
@@ -13,7 +13,13 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [
-      react(),
+      react({
+        babel: {
+          parserOpts: {
+            plugins: ["decorators-legacy"],
+          },
+        },
+      }),
       VitePWA({
         registerType: "autoUpdate",
         includeAssets: ["favicon.ico"],
