@@ -96,6 +96,206 @@ yarn preview
 
 Serves the `/dist` folder locally (http://localhost:4173).
 
+## 🎨 Customizing for Your Project
+
+When using this template as a starter for your new project, follow this checklist:
+
+### 1. **Project Identity**
+
+#### Update package.json
+
+```bash
+# Edit package.json and update:
+- "name": "your-project-name"
+- "description": "Your project description"
+- "version": "1.0.0"
+- "author": "Your Name <your.email@example.com>"
+- "homepage": "https://github.com/yourusername/your-project"
+- "repository.url": "git+https://github.com/yourusername/your-project.git"
+- "bugs.url": "https://github.com/yourusername/your-project/issues"
+- "keywords": ["your", "keywords", "here"]
+```
+
+#### Update index.html
+
+```html
+<!-- Edit index.html: -->
+<title>Your Project Name</title>
+<meta name="description" content="Your project description for SEO" />
+<meta name="apple-mobile-web-app-title" content="YourApp" />
+```
+
+#### Update App.tsx
+
+```tsx
+// Edit src/App.tsx:
+<h1>Your Project Name</h1>
+<p>Your tagline or description</p>
+```
+
+### 2. **PWA Configuration**
+
+#### Update vite.config.ts
+
+```typescript
+VitePWA({
+  manifest: {
+    name: "Your Full App Name", // Full name
+    short_name: "YourApp", // Short name (12 chars max)
+    description: "Your app description", // Add description
+    theme_color: "#your-color", // Your brand color
+    background_color: "#ffffff",
+    // Update when you have your own icons
+  },
+});
+```
+
+### 3. **Branding & Assets**
+
+#### Replace Icons & Images
+
+```bash
+# Create and replace these files in public/:
+public/
+├── favicon.ico              # 16x16, 32x32, 48x48 (your favicon)
+├── pwa-192x192.png         # 192x192 (Android home screen)
+├── pwa-512x512.png         # 512x512 (Android splash screen)
+└── (optional) apple-touch-icon.png  # 180x180 (iOS)
+
+# Replace sample image:
+src/assets/images/
+└── sample.png              # Replace with your actual images
+```
+
+**Icon Generation Tools:**
+
+- [Favicon.io](https://favicon.io/) - Generate favicon from text/image
+- [RealFaviconGenerator](https://realfavicongenerator.net/) - Comprehensive favicon generator
+- [PWA Asset Generator](https://github.com/onderceylan/pwa-asset-generator) - CLI tool for PWA icons
+
+#### Update Theme Colors
+
+```html
+<!-- Edit index.html: -->
+<meta name="theme-color" content="#your-light-color" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#your-dark-color" media="(prefers-color-scheme: dark)" />
+```
+
+```css
+/* Edit src/index.css - update color variables */
+:root {
+  --primary-color: #your-color;
+  --accent-color: #your-accent;
+}
+```
+
+### 4. **SEO & Deployment**
+
+#### Update robots.txt
+
+```txt
+# Edit public/robots.txt when deploying:
+User-agent: *
+Allow: /
+
+# Add your production sitemap:
+Sitemap: https://yourdomain.com/sitemap.xml
+```
+
+#### Add Environment Variables
+
+```bash
+# Update .env and .env.example:
+VITE_APP_NAME=Your App Name
+VITE_API_URL=https://api.yourdomain.com
+VITE_LOG_LEVEL=info
+VITE_LOG_TIMESTAMP=true
+```
+
+### 5. **Git & Repository**
+
+```bash
+# Update remote repository:
+git remote set-url origin https://github.com/yourusername/your-project.git
+
+# Update LICENSE file if needed
+# Update README.md with your project details
+```
+
+### 6. **Component Customization**
+
+#### Remove Example Components (Optional)
+
+If you don't need the example components:
+
+```bash
+# Remove example components:
+rm src/components/SimpleGreeting.ts
+rm src/components/ReactCounter.tsx
+rm src/components/ReactCounter.module.css
+rm src/components/LitComponents.tsx
+
+# Update src/components/index.ts
+# Update src/App.tsx to remove component usage
+```
+
+### 7. **Clean Up (Optional)**
+
+```bash
+# Remove sample assets if not needed:
+rm src/assets/images/sample.png
+
+# Remove example tests:
+rm tests/App.test.tsx
+
+# Create your own components and tests
+```
+
+### 8. **Verify Everything Works**
+
+After customization, verify all systems:
+
+```bash
+# Install dependencies
+yarn install
+
+# Run type checking
+yarn type-check
+
+# Run linting
+yarn lint:check
+
+# Run formatting check
+yarn format:check
+
+# Run tests
+yarn test:run
+
+# Build for production
+yarn build
+
+# Preview production build
+yarn preview
+```
+
+### Quick Checklist
+
+- [ ] Updated `package.json` (name, description, author, repository)
+- [ ] Updated `index.html` (title, description, app title)
+- [ ] Updated `src/App.tsx` (project name and description)
+- [ ] Updated `vite.config.ts` PWA manifest (name, short_name, theme)
+- [ ] Replaced `public/favicon.ico` with your favicon
+- [ ] Replaced `public/pwa-192x192.png` with your icon
+- [ ] Replaced `public/pwa-512x512.png` with your icon
+- [ ] Updated theme colors in `index.html`
+- [ ] Updated `public/robots.txt` with your domain
+- [ ] Updated `.env` and `.env.example` with your variables
+- [ ] Updated git remote URL
+- [ ] Removed example components (if not needed)
+- [ ] Removed sample assets (if not needed)
+- [ ] Ran all verification commands
+- [ ] Updated this README with your project documentation
+
 ## 📝 Available Scripts
 
 | Script               | Description                                     |
@@ -319,15 +519,82 @@ test("renders component correctly", () => {
 
 ## PWA / Offline (optional)
 
-- Icons in `public/`: `pwa-192x192.png`, `pwa-512x512.png`, `favicon.ico`
-- Minimal manifest configured in `vite.config.ts`
-- Enable the service worker by importing once in `src/main.tsx`:
+This project includes Progressive Web App (PWA) support with comprehensive mobile optimization for both iOS and Android.
+
+### PWA Features
+
+- **Service Worker** - Offline functionality via Workbox
+- **Web App Manifest** - Install prompt and app metadata
+- **Icons** - Multiple sizes for different platforms
+- **Theme Colors** - Adaptive browser chrome coloring
+- **Mobile Optimization** - iOS and Android specific enhancements
+
+### Assets in `public/`
+
+- `favicon.ico` - Standard browser favicon
+- `pwa-192x192.png` - PWA icon for mobile devices
+- `pwa-512x512.png` - PWA icon for desktop/large displays
+- `robots.txt` - Search engine crawling configuration
+
+### Mobile Support
+
+#### iOS (Safari)
+
+- ✅ Add to Home Screen with custom icon
+- ✅ Status bar styling in standalone mode
+- ✅ Custom app title: "React+Lit"
+- ✅ Theme color integration
+
+#### Android (Chrome)
+
+- ✅ Install prompt banner
+- ✅ Custom themed browser chrome
+- ✅ Auto-generated splash screen
+- ✅ Standalone app mode
+- ✅ Theme color (light/dark mode adaptive)
+
+### Configuration
+
+The PWA manifest is configured in `vite.config.ts`:
+
+```typescript
+VitePWA({
+  registerType: "autoUpdate",
+  manifest: {
+    name: "Minimal React Project",
+    short_name: "MinimalReact",
+    icons: [
+      { src: "/pwa-192x192.png", sizes: "192x192", type: "image/png" },
+      { src: "/pwa-512x512.png", sizes: "512x512", type: "image/png" },
+    ],
+  },
+});
+```
+
+Mobile-specific meta tags are configured in `index.html`:
+
+```html
+<!-- Theme colors (adaptive to light/dark mode) -->
+<meta name="theme-color" content="#646cff" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#535bf2" media="(prefers-color-scheme: dark)" />
+
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="React+Lit" />
+<link rel="apple-touch-icon" href="/pwa-192x192.png" />
+```
+
+### Enabling Service Worker
+
+Enable the service worker by importing in `src/main.tsx`:
 
 ```ts
 import "./pwa";
 ```
 
-- For offline testing, use a **production build**:
+### Testing PWA Features
+
+For offline testing, use a **production build**:
 
 ```bash
 yarn build && yarn preview
@@ -335,24 +602,36 @@ yarn build && yarn preview
 
 Open DevTools → Application → Service Workers, then **Update** / **Skip waiting** to apply the latest SW.
 
+### Testing Mobile Features
+
+1. **iOS**: Use Safari on iPhone, tap Share → Add to Home Screen
+2. **Android**: Open in Chrome, look for "Add to Home Screen" banner
+3. **Desktop**: Chrome will show an install icon in the address bar
+
 ## Project Structure
 
 ```
 minimal-react-project/
-├── index.html                # Vite entry HTML (root, not /public)
+├── index.html                # Vite entry HTML with mobile meta tags
 ├── public/
-│   ├── favicon.ico
-│   ├── pwa-192x192.png
-│   └── pwa-512x512.png
+│   ├── favicon.ico           # Browser favicon
+│   ├── pwa-192x192.png       # PWA icon (mobile)
+│   ├── pwa-512x512.png       # PWA icon (desktop)
+│   └── robots.txt            # Search engine configuration
 ├── src/
-│   ├── App.tsx
-│   ├── main.tsx
-│   ├── index.css
-│   ├── pwa.ts                # (optional) SW registration
+│   ├── App.tsx               # Main app component
+│   ├── main.tsx              # Application entry point
+│   ├── index.css             # Global styles
+│   ├── pwa.ts                # Service worker registration
 │   ├── assets/
 │   │   └── images/
 │   │       └── sample.png
-│   ├── components/  (.gitkeep)
+│   ├── components/
+│   │   ├── SimpleGreeting.ts         # Lit web component
+│   │   ├── ReactCounter.tsx          # Pure React component
+│   │   ├── ReactCounter.module.css   # CSS Modules for React
+│   │   ├── LitComponents.tsx         # React wrappers for Lit
+│   │   └── index.ts                  # Barrel exports
 │   ├── context/     (.gitkeep)
 │   ├── hooks/       (.gitkeep)
 │   ├── pages/       (.gitkeep)
@@ -361,7 +640,8 @@ minimal-react-project/
 │   ├── types/       (.gitkeep)
 │   └── utils/
 │       ├── logger.ts
-│       └── logger.types.ts
+│       ├── logger.types.ts
+│       └── index.ts                  # Barrel exports
 ├── tests/
 │   ├── App.test.tsx
 │   └── setupTests.ts
