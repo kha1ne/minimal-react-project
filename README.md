@@ -8,7 +8,7 @@ A minimalist, well-structured React + Lit hybrid project built with Vite, TypeSc
 - **TypeScript 5.9.3** - Type safety and modern JavaScript features
 - **Vite 7.1.10** - Lightning-fast dev server and build tool
 - **Node.js 25.1.0** - Latest LTS Node.js runtime
-- **Yarn Berry 4.10.3** - Modern package management with node_modules
+- **Yarn Berry 4.11.0** - Modern package management with node_modules
 - **Lit 3.3.1** - Web Components with Shadow DOM isolation
 - **@lit-labs/react** - Seamless Lit-React interop
 - **Path Aliases** - Clean imports using `@components`, `@utils`, etc.
@@ -908,7 +908,7 @@ Logger is configured from environment variables:
 ### Engine Requirements
 
 - **Node.js**: `>=25.1.0` (Latest LTS)
-- **Yarn**: `>=4.10.3` (Berry with node_modules)
+- **Yarn**: `>=4.11.0` (Berry with node_modules)
 
 ### Version Management
 
