@@ -19,6 +19,7 @@
       "@components/*": ["components/*"],
       "@context/*": ["context/*"],
       "@hooks/*": ["hooks/*"],
+      "@layouts/*": ["layouts/*"],
       "@pages/*": ["pages/*"],
       "@services/*": ["services/*"],
       "@styles/*": ["styles/*"],

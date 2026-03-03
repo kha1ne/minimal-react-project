@@ -1,11 +1,27 @@
 import "@testing-library/jest-dom";
 
 import { render, screen } from "@testing-library/react";
+import { createMemoryRouter, RouterProvider } from "react-router";
 
-import App from "../src/App";
+import { RootLayout } from "../src/layouts";
+import { HomePage } from "../src/pages";
+
+function renderWithRouter(initialPath = "/") {
+  const router = createMemoryRouter(
+    [
+      {
+        path: "/",
+        element: <RootLayout />,
+        children: [{ index: true, element: <HomePage /> }],
+      },
+    ],
+    { initialEntries: [initialPath] }
+  );
+  return render(<RouterProvider router={router} />);
+}
 
 test("renders heading and sample image", () => {
-  render(<App />);
+  renderWithRouter();
 
   const headingElement = screen.getByRole("heading", {
     name: /minimal react project/i,
@@ -17,18 +33,23 @@ test("renders heading and sample image", () => {
 });
 
 test("renders component examples section", () => {
-  render(<App />);
+  renderWithRouter();
 
   const sectionHeading = screen.getByRole("heading", {
     name: /component examples/i,
   });
   expect(sectionHeading).toBeInTheDocument();
 
-  // Check for the Lit greeting component (rendered via shadow DOM)
   const greetingElement = document.querySelector("simple-greeting");
   expect(greetingElement).toBeInTheDocument();
 
-  // Check for the React counter component (rendered normally)
   const counterText = screen.getByText(/react counter component/i);
   expect(counterText).toBeInTheDocument();
+});
+
+test("renders navigation links", () => {
+  renderWithRouter();
+
+  expect(screen.getByRole("link", { name: /home/i })).toBeInTheDocument();
+  expect(screen.getByRole("link", { name: /about/i })).toBeInTheDocument();
 });

@@ -11,6 +11,7 @@ A minimalist, well-structured React + Lit hybrid project built with Vite, TypeSc
 - **Yarn Berry 4.12.0** - Modern package management with node_modules
 - **Lit 3.3.1** - Web Components with Shadow DOM isolation
 - **@lit-labs/react** - Seamless Lit-React interop
+- **React Router 7** - Client-side routing with layouts and pages
 - **Path Aliases** - Clean imports using `@components`, `@utils`, etc.
 - **Vitest 3.2.4** - Modern testing framework with coverage
 - **Testing Library** - React testing best practices
@@ -125,10 +126,10 @@ When using this template as a starter for your new project, follow this checklis
 <meta name="apple-mobile-web-app-title" content="YourApp" />
 ```
 
-#### Update App.tsx
+#### Update HomePage.tsx
 
 ```tsx
-// Edit src/App.tsx:
+// Edit src/pages/HomePage.tsx:
 <h1>Your Project Name</h1>
 <p>Your tagline or description</p>
 ```
@@ -282,7 +283,7 @@ yarn preview
 
 - [ ] Updated `package.json` (name, description, author, repository)
 - [ ] Updated `index.html` (title, description, app title)
-- [ ] Updated `src/App.tsx` (project name and description)
+- [ ] Updated `src/pages/HomePage.tsx` (project name and description)
 - [ ] Updated `vite.config.ts` PWA manifest (name, short_name, theme)
 - [ ] Replaced `public/favicon.ico` with your favicon
 - [ ] Replaced `public/pwa-192x192.png` with your icon
@@ -619,7 +620,7 @@ minimal-react-project/
 │   ├── pwa-512x512.png       # PWA icon (desktop)
 │   └── robots.txt            # Search engine configuration
 ├── src/
-│   ├── App.tsx               # Main app component
+│   ├── App.tsx               # Router setup and route definitions
 │   ├── main.tsx              # Application entry point
 │   ├── index.css             # Global styles
 │   ├── pwa.ts                # Service worker registration
@@ -634,7 +635,13 @@ minimal-react-project/
 │   │   └── index.ts                  # Barrel exports
 │   ├── context/     (.gitkeep)
 │   ├── hooks/       (.gitkeep)
-│   ├── pages/       (.gitkeep)
+│   ├── layouts/
+│   │   ├── RootLayout.tsx            # App shell with nav + Outlet
+│   │   └── index.ts                  # Barrel exports
+│   ├── pages/
+│   │   ├── HomePage.tsx              # Home page
+│   │   ├── AboutPage.tsx             # About page
+│   │   └── index.ts                  # Barrel exports
 │   ├── services/    (.gitkeep)
 │   ├── styles/      (.gitkeep)
 │   ├── types/       (.gitkeep)
@@ -656,7 +663,7 @@ Configured in both **`tsconfig.json`** and **`vite.config.ts`**:
 
 - `@components/*` → `src/components/*`
 - `@utils/*` → `src/utils/*`
-- plus: `@context`, `@hooks`, `@pages`, `@services`, `@styles`, `@types`
+- plus: `@context`, `@hooks`, `@layouts`, `@pages`, `@services`, `@styles`, `@types`
 
 Example:
 
@@ -932,6 +939,7 @@ fnm use 25.7.0
 
 - **react** `^19.2.0` - React library
 - **react-dom** `^19.2.0` - React DOM renderer
+- **react-router** `^7.13.1` - Client-side routing
 - **lit** `^3.3.1` - Web Components library
 - **workbox-window** `^7.3.0` - Service worker runtime (PWA)
 
