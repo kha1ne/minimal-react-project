@@ -4,19 +4,19 @@ A minimalist, well-structured React + Lit hybrid project built with Vite, TypeSc
 
 ## 🚀 Features
 
-- **React 19.2.0** - Latest React with modern hooks and concurrent features
+- **React 19.2.4** - Latest React with modern hooks and concurrent features
 - **TypeScript 5.9.3** - Type safety and modern JavaScript features
-- **Vite 7.1.10** - Lightning-fast dev server and build tool
+- **Vite 7.3.1** - Lightning-fast dev server and build tool
 - **Node.js 25.7.0** - Latest LTS Node.js runtime
 - **Yarn Berry 4.12.0** - Modern package management with node_modules
-- **Lit 3.3.1** - Web Components with Shadow DOM isolation
+- **Lit 3.3.2** - Web Components with Shadow DOM isolation
 - **@lit-labs/react** - Seamless Lit-React interop
 - **React Router 7** - Client-side routing with layouts and pages
 - **Path Aliases** - Clean imports using `@components`, `@utils`, etc.
-- **Vitest 3.2.4** - Modern testing framework with coverage
+- **Vitest 4.0.18** - Modern testing framework with coverage
 - **Testing Library** - React testing best practices
-- **ESLint 9** - Modern flat config with TypeScript-aware linting
-- **Prettier 3.6.2** - Consistent code formatting
+- **ESLint 10** - Modern flat config with TypeScript-aware linting
+- **Prettier 3.8.1** - Consistent code formatting
 - **Structured Logger** - Production-ready logging system
 - **Environment Configuration** - Flexible configuration via `.env` files
 - **PWA Support** - Optional Progressive Web App capabilities
@@ -59,7 +59,7 @@ The project is optimized for modern development:
 ### Prerequisites
 
 - **Node.js**: 24+ (LTS works too)
-- **Yarn**: 4.9.4+
+- **Yarn**: 4.12.0+
 
 ### Installation
 
@@ -466,7 +466,7 @@ This project uses **Vitest** and **Testing Library** for comprehensive test cove
 
 ### Test Configuration
 
-- **Test Runner**: Vitest 3.2.4 with jsdom environment
+- **Test Runner**: Vitest 4.0.18 with jsdom environment
 - **DOM Matchers**: @testing-library/jest-dom
 - **Test Location**: `tests/` directory mirrors `src/` structure
 - **Setup File**: `tests/setupTests.ts`
@@ -725,7 +725,7 @@ function MyComponent() {
 
 ### Linting with ESLint
 
-This project uses **ESLint 9** with flat config for code quality and best practices.
+This project uses **ESLint 10** with flat config for code quality and best practices.
 
 ```bash
 # Run ESLint and auto-fix issues
@@ -755,7 +755,7 @@ yarn lint:fix
 - `eslint-plugin-react-refresh` - Fast Refresh compatibility
 - `eslint-plugin-jsx-a11y` - Accessibility rules
 - `eslint-plugin-simple-import-sort` - Automatic import organization
-- `eslint-plugin-vitest` - Vitest-specific linting
+- `@vitest/eslint-plugin` - Vitest-specific linting
 
 ### Formatting with Prettier
 
@@ -937,28 +937,28 @@ fnm use 25.7.0
 
 ### Production Dependencies
 
-- **react** `^19.2.0` - React library
-- **react-dom** `^19.2.0` - React DOM renderer
+- **react** `^19.2.4` - React library
+- **react-dom** `^19.2.4` - React DOM renderer
 - **react-router** `^7.13.1` - Client-side routing
-- **lit** `^3.3.1` - Web Components library
-- **workbox-window** `^7.3.0` - Service worker runtime (PWA)
+- **lit** `^3.3.2` - Web Components library
+- **workbox-window** `^7.4.0` - Service worker runtime (PWA)
 
 ### Development Dependencies
 
-- **vite** `^7.1.10` - Build tool and dev server
+- **vite** `^7.3.1` - Build tool and dev server
 - **typescript** `^5.9.3` - TypeScript compiler
-- **@vitejs/plugin-react** `^5.0.4` - React Fast Refresh with Babel (supports decorators)
-- **lit** `^3.3.1` - Web Components library
+- **@vitejs/plugin-react** `^5.1.4` - React Fast Refresh with Babel (supports decorators)
+- **lit** `^3.3.2` - Web Components library
 - **@lit-labs/react** `^2.1.3` - Lit-React interop wrapper
-- **vitest** `^3.2.4` - Test framework
-- **@vitest/coverage-v8** `3.2.4` - Coverage provider
-- **@testing-library/react** `^16.3.0` - React testing utilities
+- **vitest** `^4.0.18` - Test framework
+- **@vitest/coverage-v8** `4.0.18` - Coverage provider
+- **@testing-library/react** `^16.3.2` - React testing utilities
 - **@testing-library/jest-dom** `^6.9.1` - Custom jest matchers
-- **eslint** `^9.37.0` - Linting (flat config)
-- **typescript-eslint** `^8.46.1` - TypeScript ESLint support
-- **prettier** `^3.6.2` - Code formatting
-- **vite-plugin-pwa** `^1.1.0` - PWA support
-- **jsdom** `^27.0.0` - DOM implementation for testing
+- **eslint** `^10.0.2` - Linting (flat config)
+- **typescript-eslint** `^8.56.1` - TypeScript ESLint support
+- **prettier** `^3.8.1` - Code formatting
+- **vite-plugin-pwa** `^1.2.0` - PWA support
+- **jsdom** `^28.1.0` - DOM implementation for testing
 
 ## 🤝 Contributing
 
