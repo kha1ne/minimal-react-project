@@ -75,5 +75,8 @@
     "vite-plugin-pwa": "^1.2.0",
     "vitest": "^4.1.0"
   },
+  "resolutions": {
+    "baseline-browser-mapping": "^2.10.7"
+  },
   "packageManager": "yarn@4.13.0"
 }
