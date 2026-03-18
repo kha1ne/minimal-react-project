@@ -26,13 +26,18 @@ export default defineConfig(({ mode }) => {
         manifest: {
           name: "Minimal React Project",
           short_name: "MinimalReact",
+          description: "A hybrid React + Lit web components starter built with Vite and TypeScript",
           start_url: "/",
+          scope: "/",
           display: "standalone",
+          display_override: ["window-controls-overlay", "standalone", "minimal-ui"],
           background_color: "#ffffff",
-          theme_color: "#ffffff",
+          theme_color: "#646cff",
+          lang: "en",
           icons: [
-            { src: "/pwa-192x192.png", sizes: "192x192", type: "image/png" },
-            { src: "/pwa-512x512.png", sizes: "512x512", type: "image/png" },
+            { src: "/pwa-192x192.png", sizes: "192x192", type: "image/png", purpose: "any" },
+            { src: "/pwa-512x512.png", sizes: "512x512", type: "image/png", purpose: "any" },
+            { src: "/pwa-512x512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
           ],
         },
         workbox: {
