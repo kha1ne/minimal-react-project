@@ -13,13 +13,7 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [
-      react({
-        babel: {
-          parserOpts: {
-            plugins: ["decorators-legacy"],
-          },
-        },
-      }),
+      react(),
       VitePWA({
         registerType: "autoUpdate",
         includeAssets: ["favicon.ico"],

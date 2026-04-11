@@ -14,17 +14,16 @@
     "forceConsistentCasingInFileNames": true,
     "verbatimModuleSyntax": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "baseUrl": "src",
     "paths": {
-      "@components/*": ["components/*"],
-      "@context/*": ["context/*"],
-      "@hooks/*": ["hooks/*"],
-      "@layouts/*": ["layouts/*"],
-      "@pages/*": ["pages/*"],
-      "@services/*": ["services/*"],
-      "@styles/*": ["styles/*"],
-      "@types/*": ["types/*"],
-      "@utils/*": ["utils/*"]
+      "@components/*": ["./src/components/*"],
+      "@context/*": ["./src/context/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@layouts/*": ["./src/layouts/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@services/*": ["./src/services/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@types/*": ["./src/types/*"],
+      "@utils/*": ["./src/utils/*"]
     },
     "types": ["vite/client", "vitest/globals", "node"],
     "resolveJsonModule": true
