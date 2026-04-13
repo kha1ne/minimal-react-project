@@ -52,6 +52,16 @@ export default defineConfig(({ mode }) => {
         "@utils": resolve(__dirname, "src/utils"),
       },
     },
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes("@lit") || id.includes("/lit/") || id.includes("/lit-")) return "vendor-lit";
+            if (id.includes("react-dom") || id.includes("react-router") || id.includes("react/")) return "vendor-react";
+          },
+        },
+      },
+    },
     server: {
       port,
       strictPort: false,

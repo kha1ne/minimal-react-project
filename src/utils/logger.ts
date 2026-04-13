@@ -1,5 +1,5 @@
-import type { Logger, LoggerConfig } from "./logger.types";
-import { LogLevel } from "./logger.types";
+import type { Logger, LoggerConfig } from "./loggerTypes";
+import { LogLevel } from "./loggerTypes";
 
 class AppLogger implements Logger {
   private config: LoggerConfig;

@@ -1,6 +1,6 @@
 import type { FC } from "react";
 
-import styles from "./ReactCounter.module.css";
+import styles from "./reactCounter.module.css";
 
 interface ReactCounterProps {
   count: number;

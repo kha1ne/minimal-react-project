@@ -4,7 +4,7 @@ import { render, screen } from "@testing-library/react";
 import { createMemoryRouter, RouterProvider } from "react-router";
 
 import { RootLayout } from "../src/layouts";
-import { HomePage } from "../src/pages";
+import { Home } from "../src/pages";
 
 function renderWithRouter(initialPath = "/") {
   const router = createMemoryRouter(
@@ -12,7 +12,7 @@ function renderWithRouter(initialPath = "/") {
       {
         path: "/",
         element: <RootLayout />,
-        children: [{ index: true, element: <HomePage /> }],
+        children: [{ index: true, element: <Home /> }],
       },
     ],
     { initialEntries: [initialPath] }

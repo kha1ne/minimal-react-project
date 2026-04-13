@@ -2927,11 +2927,11 @@ __metadata:
   linkType: hard
 
 "baseline-browser-mapping@npm:^2.10.7":
-  version: 2.10.7
-  resolution: "baseline-browser-mapping@npm:2.10.7"
+  version: 2.10.18
+  resolution: "baseline-browser-mapping@npm:2.10.18"
   bin:
     baseline-browser-mapping: dist/cli.cjs
-  checksum: 10c9/68b1d8351df683f511298e7123a8eda1939c237a29983871ebd8500303d3da0f6d1c6aa380a5e261c6b89fc61d6524340845055d66a4f82a1adbbb4da9c8c079
+  checksum: 10c9/b0babff57a53539fc5f8b757dc224a2d1296ec7c91975373da70757041a03d797bc09a13820bfb4e6ce363cc1cf84b6b3649abc7fd912aa9104bc693bc714e50
   languageName: node
   linkType: hard
 
@@ -3054,9 +3054,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.30001746":
-  version: 1.0.30001751
-  resolution: "caniuse-lite@npm:1.0.30001751"
-  checksum: 10c9/608f7e1248b7023020382c7dbb0ef389693b3fc98193c3ccea2d44126306d6ac905a5061cf9e62bf640535a86e7a98e563b34c02f909296cfe228f41627a4dc7
+  version: 1.0.30001787
+  resolution: "caniuse-lite@npm:1.0.30001787"
+  checksum: 10c9/2b3a2400b21d89123f13b7a8a7ad58dbdeb9971b62e33f43712d7209b69656f8bfd8ab67ab760c12e5fa7967b18c108ca67d7f20b7c7ccf039621f7db56baecf
   languageName: node
   linkType: hard
 
@@ -4133,10 +4133,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"globals@npm:^17.4.0":
-  version: 17.4.0
-  resolution: "globals@npm:17.4.0"
-  checksum: 10c9/ebcbc742c13cb5e43b162f9b1f236ab3865807cacbf1529796c0dbc418cc0d979f2b113f312a31256c6c7c77bff3cf380cd6651fb771a1ebc70ac8094d92d228
+"globals@npm:^17.5.0":
+  version: 17.5.0
+  resolution: "globals@npm:17.5.0"
+  checksum: 10c9/f4bc66d72b625bf3118c6a3c9ddd4c046445febf0386d01dbd5c5157df2f73ed4ff75fc2043aeba5d4a4867cfcf6e9cffabe1732a55fc84c195ab2a0592bb96b
   languageName: node
   linkType: hard
 
@@ -5223,7 +5223,7 @@ __metadata:
     eslint-plugin-react-hooks: "npm:^7.0.1"
     eslint-plugin-react-refresh: "npm:^0.5.2"
     eslint-plugin-simple-import-sort: "npm:^13.0.0"
-    globals: "npm:^17.4.0"
+    globals: "npm:^17.5.0"
     jsdom: "npm:^29.0.2"
     lit: "npm:^3.3.2"
     prettier: "npm:^3.8.2"

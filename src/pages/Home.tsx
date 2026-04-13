@@ -5,15 +5,15 @@ import { useEffect, useState } from "react";
 
 import sampleImage from "../assets/images/sample.png";
 
-const HomePage: FC = () => {
+const Home: FC = () => {
   const [counterValue, setCounterValue] = useState(0);
 
   useEffect(() => {
-    logger.info("HomePage mounted");
+    logger.info("Home mounted");
     logger.debug("Component initialized", { timestamp: new Date().toISOString() });
 
     return () => {
-      logger.debug("HomePage will unmount");
+      logger.debug("Home will unmount");
     };
   }, []);
 
@@ -46,4 +46,4 @@ const HomePage: FC = () => {
   );
 };
 
-export default HomePage;
+export default Home;
