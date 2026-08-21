@@ -7,8 +7,8 @@ A minimalist, well-structured React + Lit hybrid project built with Vite, TypeSc
 - **React 19.2.4** - Latest React with modern hooks and concurrent features
 - **TypeScript 5.9.3** - Type safety and modern JavaScript features
 - **Vite 7.3.1** - Lightning-fast dev server and build tool
-- **Node.js 26.2.0** - Latest LTS Node.js runtime
-- **Yarn Berry 4.15.0** - Modern package management with node_modules
+- **Node.js 26.7.0** - Latest LTS Node.js runtime
+- **Yarn Berry 4.18.0** - Modern package management with node_modules
 - **Lit 3.3.2** - Web Components with Shadow DOM isolation
 - **@lit-labs/react** - Seamless Lit-React interop
 - **React Router 7** - Client-side routing with layouts and pages
@@ -59,7 +59,7 @@ The project is optimized for modern development:
 ### Prerequisites
 
 - **Node.js**: 24+ (LTS works too)
-- **Yarn**: 4.15.0+
+- **Yarn**: 4.18.0+
 
 ### Installation
 
@@ -914,8 +914,8 @@ Logger is configured from environment variables:
 
 ### Engine Requirements
 
-- **Node.js**: `>=26.2.0` (Latest LTS)
-- **Yarn**: `>=4.15.0` (Berry with node_modules)
+- **Node.js**: `>=26.7.0` (Latest LTS)
+- **Yarn**: `>=4.18.0` (Berry with node_modules)
 
 ### Version Management
 
@@ -923,15 +923,15 @@ If you need to manage multiple Node.js versions:
 
 ```bash
 # Using nvm (Node Version Manager)
-nvm install 26.2.0
-nvm use 26.2.0
+nvm install 26.7.0
+nvm use 26.7.0
 
 # Using fnm (Fast Node Manager)
-fnm install 26.2.0
-fnm use 26.2.0
+fnm install 26.7.0
+fnm use 26.7.0
 ```
 
-**Note:** This project includes a `.nvmrc` file that specifies Node.js 26.2.0. If you use nvm, it will automatically use the correct version when you `cd` into the project directory (with nvm auto-use enabled).
+**Note:** This project includes a `.nvmrc` file that specifies Node.js 26.7.0. If you use nvm, it will automatically use the correct version when you `cd` into the project directory (with nvm auto-use enabled).
 
 ## 📦 Dependencies
 
