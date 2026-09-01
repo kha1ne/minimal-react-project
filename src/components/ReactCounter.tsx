@@ -29,13 +29,13 @@ export const ReactCounter: FC<ReactCounterProps> = ({ count, onCountChange }) =>
       <div className={styles.label}>React Counter Component</div>
       <div className={styles.count}>{count}</div>
       <div className={styles.controls}>
-        <button className={styles.button} onClick={handleDecrement}>
+        <button aria-label='Decrement' className={styles.button} type='button' onClick={handleDecrement}>
           ➖
         </button>
-        <button className={styles.button} onClick={handleReset}>
+        <button className={styles.button} type='button' onClick={handleReset}>
           Reset
         </button>
-        <button className={styles.button} onClick={handleIncrement}>
+        <button aria-label='Increment' className={styles.button} type='button' onClick={handleIncrement}>
           ➕
         </button>
       </div>

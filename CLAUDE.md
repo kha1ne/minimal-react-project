@@ -25,11 +25,11 @@ This is a **React 19 + Lit web components** hybrid app built with Vite and TypeS
 
 ### Routing
 
-React Router v7 with `createBrowserRouter`. Routes are defined in `src/App.tsx`. Layout with nav lives in `src/layouts/RootLayout.tsx`, pages in `src/pages/`. For tests, use `createMemoryRouter` instead of `createBrowserRouter` (see `tests/App.test.tsx` for the pattern).
+React Router v8 with `createBrowserRouter`. Routes are defined in `src/App.tsx`. Layout with nav lives in `src/layouts/RootLayout.tsx`, pages in `src/pages/`. For tests, use `createMemoryRouter` instead of `createBrowserRouter` (see `tests/App.test.tsx` for the pattern).
 
 ### Lit-in-React pattern
 
-Lit web components (defined in `src/components/*.ts` with `@customElement` decorator) are wrapped for React consumption using `@lit-labs/react`'s `createComponent` in `src/components/LitComponents.tsx`. React code imports the wrapped versions from `src/components/index.ts`, not the raw Lit classes. Example: `SimpleGreeting.ts` (Lit) -> `LitComponents.tsx` (React wrapper) -> `index.ts` (barrel export).
+Lit web components (defined in `src/components/*.ts` with `@customElement` decorator) are wrapped for React consumption using `@lit/react`'s `createComponent` in `src/components/LitComponents.tsx`. React code imports the wrapped versions from `src/components/index.ts`, not the raw Lit classes. Example: `SimpleGreeting.ts` (Lit) -> `LitComponents.tsx` (React wrapper) -> `index.ts` (barrel export).
 
 ### Path aliases
 

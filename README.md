@@ -4,19 +4,19 @@ A minimalist, well-structured React + Lit hybrid project built with Vite, TypeSc
 
 ## 🚀 Features
 
-- **React 19.2.4** - Latest React with modern hooks and concurrent features
-- **TypeScript 5.9.3** - Type safety and modern JavaScript features
-- **Vite 7.3.1** - Lightning-fast dev server and build tool
-- **Node.js 26.7.0** - Latest LTS Node.js runtime
+- **React 19.2.8** - React with modern hooks and concurrent features
+- **TypeScript 6.0.3** - Type safety and modern JavaScript features
+- **Vite 8.2.2** - Fast dev server and build tool
+- **Node.js 26.8.1** - Pinned development runtime (Current release)
 - **Yarn Berry 4.18.0** - Modern package management with node_modules
-- **Lit 3.3.2** - Web Components with Shadow DOM isolation
-- **@lit-labs/react** - Seamless Lit-React interop
-- **React Router 7** - Client-side routing with layouts and pages
+- **Lit 3.3.3** - Web Components with Shadow DOM isolation
+- **@lit/react** - Lit-React interop
+- **React Router 8** - Client-side routing with layouts and pages
 - **Path Aliases** - Clean imports using `@components`, `@utils`, etc.
-- **Vitest 4.0.18** - Modern testing framework with coverage
+- **Vitest 4.1.11** - Modern testing framework with coverage
 - **Testing Library** - React testing best practices
 - **ESLint 10** - Modern flat config with TypeScript-aware linting
-- **Prettier 3.8.1** - Consistent code formatting
+- **Prettier 3.9.6** - Consistent code formatting
 - **Structured Logger** - Production-ready logging system
 - **Environment Configuration** - Flexible configuration via `.env` files
 - **PWA Support** - Optional Progressive Web App capabilities
@@ -58,7 +58,7 @@ The project is optimized for modern development:
 
 ### Prerequisites
 
-- **Node.js**: 24+ (LTS works too)
+- **Node.js**: 26.8.1 is the pinned development version; Node.js 24+ is supported
 - **Yarn**: 4.18.0+
 
 ### Installation
@@ -126,10 +126,10 @@ When using this template as a starter for your new project, follow this checklis
 <meta name="apple-mobile-web-app-title" content="YourApp" />
 ```
 
-#### Update HomePage.tsx
+#### Update Home.tsx
 
 ```tsx
-// Edit src/pages/HomePage.tsx:
+// Edit src/pages/Home.tsx:
 <h1>Your Project Name</h1>
 <p>Your tagline or description</p>
 ```
@@ -283,7 +283,7 @@ yarn preview
 
 - [ ] Updated `package.json` (name, description, author, repository)
 - [ ] Updated `index.html` (title, description, app title)
-- [ ] Updated `src/pages/HomePage.tsx` (project name and description)
+- [ ] Updated `src/pages/Home.tsx` (project name and description)
 - [ ] Updated `vite.config.ts` PWA manifest (name, short_name, theme)
 - [ ] Replaced `public/favicon.ico` with your favicon
 - [ ] Replaced `public/pwa-192x192.png` with your icon
@@ -305,20 +305,20 @@ yarn preview
 | `yarn build`         | Build production bundle to `/dist`              |
 | `yarn preview`       | Preview production build locally                |
 | `yarn type-check`    | Check TypeScript types without compilation      |
-| `yarn lint`          | Lint and auto-fix code with ESLint              |
+| `yarn lint`          | Lint code with ESLint                           |
 | `yarn lint:check`    | Check for linting issues without fixing (CI/CD) |
 | `yarn lint:fix`      | Lint and force fix all auto-fixable issues      |
 | `yarn format`        | Format code with Prettier                       |
 | `yarn format:check`  | Check if code is formatted correctly (CI/CD)    |
 | `yarn test`          | Run tests in watch mode (Vitest)                |
 | `yarn test:run`      | Run tests once (CI-friendly)                    |
-| `yarn test:watch`    | Run tests in watch mode with UI                 |
+| `yarn test:watch`    | Run tests in watch mode                         |
 | `yarn test:coverage` | Run tests with coverage report                  |
 | `yarn test:ci`       | Run tests with coverage and verbose output      |
 
 ## � Lit Web Components
 
-This project integrates **Lit** web components with React using **@lit-labs/react**, providing true Shadow DOM isolation and framework-agnostic components.
+This project integrates **Lit** web components with React using **@lit/react**, providing Shadow DOM isolation and framework-agnostic components.
 
 ### Why Lit + React?
 
@@ -327,7 +327,7 @@ This project integrates **Lit** web components with React using **@lit-labs/reac
 - **Small Bundle Size**: Lit is lightweight (~5KB minified + gzipped)
 - **Web Standards**: Built on native Custom Elements API
 - **Type Safety**: Full TypeScript support with decorators
-- **Interoperability**: Seamless React integration via @lit-labs/react
+- **Interoperability**: React integration via @lit/react
 
 ### Included Example Components
 
@@ -466,7 +466,7 @@ This project uses **Vitest** and **Testing Library** for comprehensive test cove
 
 ### Test Configuration
 
-- **Test Runner**: Vitest 4.0.18 with jsdom environment
+- **Test Runner**: Vitest 4.1.11 with jsdom environment
 - **DOM Matchers**: @testing-library/jest-dom
 - **Test Location**: `tests/` directory mirrors `src/` structure
 - **Setup File**: `tests/setupTests.ts`
@@ -492,7 +492,7 @@ yarn test
 # Run tests once (CI-friendly)
 yarn test:run
 
-# Run tests in watch mode with UI
+# Run tests in watch mode
 yarn test:watch
 
 # Generate coverage report
@@ -630,7 +630,7 @@ minimal-react-project/
 │   ├── components/
 │   │   ├── SimpleGreeting.ts         # Lit web component
 │   │   ├── ReactCounter.tsx          # Pure React component
-│   │   ├── ReactCounter.module.css   # CSS Modules for React
+│   │   ├── reactCounter.module.css   # CSS Modules for React
 │   │   ├── LitComponents.tsx         # React wrappers for Lit
 │   │   └── index.ts                  # Barrel exports
 │   ├── context/     (.gitkeep)
@@ -639,15 +639,15 @@ minimal-react-project/
 │   │   ├── RootLayout.tsx            # App shell with nav + Outlet
 │   │   └── index.ts                  # Barrel exports
 │   ├── pages/
-│   │   ├── HomePage.tsx              # Home page
-│   │   ├── AboutPage.tsx             # About page
+│   │   ├── Home.tsx                  # Home page
+│   │   ├── About.tsx                 # About page
 │   │   └── index.ts                  # Barrel exports
 │   ├── services/    (.gitkeep)
 │   ├── styles/      (.gitkeep)
 │   ├── types/       (.gitkeep)
 │   └── utils/
 │       ├── logger.ts
-│       ├── logger.types.ts
+│       ├── loggerTypes.ts
 │       └── index.ts                  # Barrel exports
 ├── tests/
 │   ├── App.test.tsx
@@ -777,7 +777,7 @@ yarn format:check
 - Single quotes for JSX
 - ES5 trailing commas
 
-**Configuration file:** `.prettierrc.json`
+**Configuration file:** `.prettierrc`
 
 **Excluded paths:**
 
@@ -798,7 +798,7 @@ Your `.vscode/settings.json` is already configured for:
 - ✅ Format on save
 - ✅ Auto-fix ESLint issues on save
 - ✅ Consistent line endings (LF)
-- ✅ TypeScript project references
+- ✅ Workspace TypeScript SDK configuration
 - ✅ nvm support for correct Node.js version
 
 ### CI/CD Integration
@@ -914,7 +914,7 @@ Logger is configured from environment variables:
 
 ### Engine Requirements
 
-- **Node.js**: `>=26.7.0` (Latest LTS)
+- **Node.js**: `>=24.0.0` (26.8.1 pinned in `.nvmrc`; Node 26 is Current, while Node 24 is LTS)
 - **Yarn**: `>=4.18.0` (Berry with node_modules)
 
 ### Version Management
@@ -923,42 +923,42 @@ If you need to manage multiple Node.js versions:
 
 ```bash
 # Using nvm (Node Version Manager)
-nvm install 26.7.0
-nvm use 26.7.0
+nvm install 26.8.1
+nvm use 26.8.1
 
 # Using fnm (Fast Node Manager)
-fnm install 26.7.0
-fnm use 26.7.0
+fnm install 26.8.1
+fnm use 26.8.1
 ```
 
-**Note:** This project includes a `.nvmrc` file that specifies Node.js 26.7.0. If you use nvm, it will automatically use the correct version when you `cd` into the project directory (with nvm auto-use enabled).
+**Note:** This project includes a `.nvmrc` file that specifies Node.js 26.8.1. If you use nvm, it will automatically use the correct version when you `cd` into the project directory (with nvm auto-use enabled).
 
 ## 📦 Dependencies
 
 ### Production Dependencies
 
-- **react** `^19.2.4` - React library
-- **react-dom** `^19.2.4` - React DOM renderer
-- **react-router** `^7.13.1` - Client-side routing
-- **lit** `^3.3.2` - Web Components library
-- **workbox-window** `^7.4.0` - Service worker runtime (PWA)
+- **@lit/react** `^1.0.8` - Lit-React interop wrapper
+- **react** `^19.2.8` - React library
+- **react-dom** `^19.2.8` - React DOM renderer
+- **react-router** `^8.3.1` - Client-side routing
+- **lit** `^3.3.3` - Web Components library
+- **workbox-window** `^7.4.1` - Service worker runtime (PWA)
 
 ### Development Dependencies
 
-- **vite** `^7.3.1` - Build tool and dev server
-- **typescript** `^5.9.3` - TypeScript compiler
-- **@vitejs/plugin-react** `^5.1.4` - React Fast Refresh with Babel (supports decorators)
-- **lit** `^3.3.2` - Web Components library
-- **@lit-labs/react** `^2.1.3` - Lit-React interop wrapper
-- **vitest** `^4.0.18` - Test framework
-- **@vitest/coverage-v8** `4.0.18` - Coverage provider
-- **@testing-library/react** `^16.3.2` - React testing utilities
-- **@testing-library/jest-dom** `^6.9.1` - Custom jest matchers
-- **eslint** `^10.0.2` - Linting (flat config)
-- **typescript-eslint** `^8.56.1` - TypeScript ESLint support
-- **prettier** `^3.8.1` - Code formatting
-- **vite-plugin-pwa** `^1.2.0` - PWA support
-- **jsdom** `^28.1.0` - DOM implementation for testing
+- **vite** `^8.2.2` - Build tool and dev server
+- **typescript** `^6.0.0` - TypeScript compiler; TypeScript 7 is not yet supported by `typescript-eslint`
+- **@vitejs/plugin-react** `^6.1.1` - React Fast Refresh (supports decorators)
+- **lit** `^3.3.3` - Web Components library
+- **vitest** `^4.1.11` - Test framework
+- **@vitest/coverage-v8** `4.1.11` - Coverage provider
+- **@testing-library/react** `^16.3.3` - React testing utilities
+- **@testing-library/jest-dom** `^7.0.1` - Custom jest matchers
+- **eslint** `^10.9.1` - Linting (flat config)
+- **typescript-eslint** `^8.69.0` - TypeScript ESLint support
+- **prettier** `^3.9.6` - Code formatting
+- **vite-plugin-pwa** `^1.3.0` - PWA support
+- **jsdom** `^30.0.1` - DOM implementation for testing
 
 ## 🤝 Contributing
 
