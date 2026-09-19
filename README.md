@@ -4,19 +4,19 @@ A minimalist, well-structured React + Lit hybrid project built with Vite, TypeSc
 
 ## 🚀 Features
 
-- **React 19.2.8** - React with modern hooks and concurrent features
+- **React 19.3.0** - React with modern hooks and concurrent features
 - **TypeScript 6.0.3** - Type safety and modern JavaScript features
-- **Vite 8.2.2** - Fast dev server and build tool
-- **Node.js 26.8.1** - Pinned development runtime (Current release)
+- **Vite 8.3.0** - Fast dev server and build tool
+- **Node.js 26.9.0** - Pinned development runtime (Current release)
 - **Yarn Berry 4.18.0** - Modern package management with node_modules
 - **Lit 3.3.3** - Web Components with Shadow DOM isolation
 - **@lit/react** - Lit-React interop
 - **React Router 8** - Client-side routing with layouts and pages
 - **Path Aliases** - Clean imports using `@components`, `@utils`, etc.
-- **Vitest 4.1.11** - Modern testing framework with coverage
+- **Vitest 5.0.1** - Modern testing framework with coverage
 - **Testing Library** - React testing best practices
 - **ESLint 10** - Modern flat config with TypeScript-aware linting
-- **Prettier 3.9.6** - Consistent code formatting
+- **Prettier 3.9.8** - Consistent code formatting
 - **Structured Logger** - Production-ready logging system
 - **Environment Configuration** - Flexible configuration via `.env` files
 - **PWA Support** - Optional Progressive Web App capabilities
@@ -58,10 +58,17 @@ The project is optimized for modern development:
 
 ### Prerequisites
 
-- **Node.js**: 26.8.1 is the pinned development version; Node.js 24+ is supported
-- **Yarn**: 4.18.0+
+- **Node.js**: 26.9.0 is the pinned development version; Node.js 24+ is supported
+- **Yarn**: 4.18.0 through Corepack
 
 ### Installation
+
+Node.js 25 and later do not bundle Corepack. Install and enable it before the first Yarn command:
+
+```bash
+npm install --global corepack
+corepack enable
+```
 
 ```bash
 yarn install
@@ -457,7 +464,7 @@ Lit decorators require specific TypeScript settings (already configured):
 ### Resources
 
 - [Lit Documentation](https://lit.dev/)
-- [Lit Labs React](https://github.com/lit/lit/tree/main/packages/labs/react)
+- [Lit React integration](https://lit.dev/docs/frameworks/react/)
 - [Web Components Basics](https://developer.mozilla.org/en-US/docs/Web/Web_Components)
 
 ## �🧪 Testing
@@ -466,7 +473,7 @@ This project uses **Vitest** and **Testing Library** for comprehensive test cove
 
 ### Test Configuration
 
-- **Test Runner**: Vitest 4.1.11 with jsdom environment
+- **Test Runner**: Vitest 5.0.1 with jsdom environment
 - **DOM Matchers**: @testing-library/jest-dom
 - **Test Location**: `tests/` directory mirrors `src/` structure
 - **Setup File**: `tests/setupTests.ts`
@@ -901,7 +908,7 @@ Logger is configured from environment variables:
 ## Environment Types & Editor Support
 
 - Global types: `tsconfig.json` includes `"types": ["vite/client", "vitest/globals", "node"]`.
-- Test setup: `tests/setupTests.ts` imports `@testing-library/jest-dom`.
+- Test setup: `tests/setupTests.ts` imports `@testing-library/jest-dom/vitest`.
 - VS Code: Standard TypeScript integration with node_modules.
 
 ## Notes on Ports
@@ -914,7 +921,7 @@ Logger is configured from environment variables:
 
 ### Engine Requirements
 
-- **Node.js**: `>=24.0.0` (26.8.1 pinned in `.nvmrc`; Node 26 is Current, while Node 24 is LTS)
+- **Node.js**: `>=24.0.0` (26.9.0 pinned in `.nvmrc`; Node 26 is Current, while Node 24 is LTS)
 - **Yarn**: `>=4.18.0` (Berry with node_modules)
 
 ### Version Management
@@ -923,42 +930,42 @@ If you need to manage multiple Node.js versions:
 
 ```bash
 # Using nvm (Node Version Manager)
-nvm install 26.8.1
-nvm use 26.8.1
+nvm install 26.9.0
+nvm use 26.9.0
 
 # Using fnm (Fast Node Manager)
-fnm install 26.8.1
-fnm use 26.8.1
+fnm install 26.9.0
+fnm use 26.9.0
 ```
 
-**Note:** This project includes a `.nvmrc` file that specifies Node.js 26.8.1. If you use nvm, it will automatically use the correct version when you `cd` into the project directory (with nvm auto-use enabled).
+**Note:** This project includes a `.nvmrc` file that specifies Node.js 26.9.0. If you use nvm, it will automatically use the correct version when you `cd` into the project directory (with nvm auto-use enabled).
 
 ## 📦 Dependencies
 
 ### Production Dependencies
 
 - **@lit/react** `^1.0.8` - Lit-React interop wrapper
-- **react** `^19.2.8` - React library
-- **react-dom** `^19.2.8` - React DOM renderer
-- **react-router** `^8.3.1` - Client-side routing
+- **react** `^19.3.0` - React library
+- **react-dom** `^19.3.0` - React DOM renderer
+- **react-router** `^8.4.0` - Client-side routing
 - **lit** `^3.3.3` - Web Components library
 - **workbox-window** `^7.4.1` - Service worker runtime (PWA)
 
 ### Development Dependencies
 
-- **vite** `^8.2.2` - Build tool and dev server
+- **vite** `^8.3.0` - Build tool and dev server
 - **typescript** `^6.0.0` - TypeScript compiler; TypeScript 7 is not yet supported by `typescript-eslint`
 - **@vitejs/plugin-react** `^6.1.1` - React Fast Refresh (supports decorators)
 - **lit** `^3.3.3` - Web Components library
-- **vitest** `^4.1.11` - Test framework
-- **@vitest/coverage-v8** `4.1.11` - Coverage provider
+- **vitest** `^5.0.1` - Test framework
+- **@vitest/coverage-v8** `5.0.1` - Coverage provider
 - **@testing-library/react** `^16.3.3` - React testing utilities
 - **@testing-library/jest-dom** `^7.0.1` - Custom jest matchers
-- **eslint** `^10.9.1` - Linting (flat config)
-- **typescript-eslint** `^8.69.0` - TypeScript ESLint support
-- **prettier** `^3.9.6` - Code formatting
+- **eslint** `^10.11.0` - Linting (flat config)
+- **typescript-eslint** `^8.70.0` - TypeScript ESLint support
+- **prettier** `^3.9.8` - Code formatting
 - **vite-plugin-pwa** `^1.3.0` - PWA support
-- **jsdom** `^30.0.1` - DOM implementation for testing
+- **jsdom** `^30.1.0` - DOM implementation for testing
 
 ## 🤝 Contributing
 

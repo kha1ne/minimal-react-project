@@ -37,7 +37,7 @@ Configured in both `tsconfig.json` and `vite.config.ts`: `@components/*`, `@cont
 
 ### Testing
 
-Vitest with jsdom environment. Setup file at `tests/setupTests.ts` imports `@testing-library/jest-dom`. Tests live in `tests/` or co-located as `*.test.{ts,tsx}` / `*.spec.{ts,tsx}` in `src/`. Coverage thresholds: 80% for branches, functions, lines, and statements.
+Vitest with jsdom environment. Setup file at `tests/setupTests.ts` imports `@testing-library/jest-dom/vitest`. Tests live in `tests/` or co-located as `*.test.{ts,tsx}` / `*.spec.{ts,tsx}` in `src/`. Coverage thresholds: 80% for branches, functions, lines, and statements.
 
 ### Code style
 
