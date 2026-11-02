@@ -5,10 +5,10 @@ A minimalist, well-structured React + Lit hybrid project built with Vite, TypeSc
 ## 🚀 Features
 
 - **React 19.3.0** - React with modern hooks and concurrent features
-- **TypeScript 6.0.3** - Type safety and modern JavaScript features
+- **TypeScript 7.0.2** - Native compiler, with the TypeScript 6 API retained for ESLint
 - **Vite 8.3.0** - Fast dev server and build tool
-- **Node.js 26.9.0** - Pinned development runtime (Current release)
-- **Yarn Berry 4.18.0** - Modern package management with node_modules
+- **Node.js 26.13.0** - Pinned development runtime (Current release)
+- **Yarn Berry 4.18.1** - Modern package management with node_modules
 - **Lit 3.3.3** - Web Components with Shadow DOM isolation
 - **@lit/react** - Lit-React interop
 - **React Router 8** - Client-side routing with layouts and pages
@@ -58,8 +58,8 @@ The project is optimized for modern development:
 
 ### Prerequisites
 
-- **Node.js**: 26.9.0 is the pinned development version; Node.js 24+ is supported
-- **Yarn**: 4.18.0 through Corepack
+- **Node.js**: 26.13.0 is the pinned development version; Node.js 24+ is supported
+- **Yarn**: 4.18.1 through Corepack
 
 ### Installation
 
@@ -911,6 +911,15 @@ Logger is configured from environment variables:
 - Test setup: `tests/setupTests.ts` imports `@testing-library/jest-dom/vitest`.
 - VS Code: Standard TypeScript integration with node_modules.
 
+### TypeScript 7 and ESLint compatibility
+
+`yarn type-check` runs the native TypeScript 7.0.2 compiler supplied by the `@typescript/native` alias.
+ESLint imports the TypeScript 6 API through `typescript`, aliased to `@typescript/typescript6`.
+This follows [Microsoft's side-by-side setup](https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/#running-side-by-side-with-typescript-6.0):
+[`typescript-eslint` does not support the TypeScript 7 API yet](https://github.com/typescript-eslint/typescript-eslint/issues/12518).
+Typed linting remains enabled, but evaluates types using TypeScript 6; `yarn type-check` validates them using TypeScript 7.
+The configured editor SDK also uses TypeScript 6.
+
 ## Notes on Ports
 
 - **Dev**: `yarn dev` → <http://localhost:5173>
@@ -921,8 +930,8 @@ Logger is configured from environment variables:
 
 ### Engine Requirements
 
-- **Node.js**: `>=24.0.0` (26.9.0 pinned in `.nvmrc`; Node 26 is Current, while Node 24 is LTS)
-- **Yarn**: `>=4.18.0` (Berry with node_modules)
+- **Node.js**: `>=24.0.0` (26.13.0 pinned in `.nvmrc`; Node 26 is Current, while Node 24 is LTS)
+- **Yarn**: `>=4.18.1` (Berry with node_modules)
 
 ### Version Management
 
@@ -930,15 +939,15 @@ If you need to manage multiple Node.js versions:
 
 ```bash
 # Using nvm (Node Version Manager)
-nvm install 26.9.0
-nvm use 26.9.0
+nvm install 26.13.0
+nvm use 26.13.0
 
 # Using fnm (Fast Node Manager)
-fnm install 26.9.0
-fnm use 26.9.0
+fnm install 26.13.0
+fnm use 26.13.0
 ```
 
-**Note:** This project includes a `.nvmrc` file that specifies Node.js 26.9.0. If you use nvm, it will automatically use the correct version when you `cd` into the project directory (with nvm auto-use enabled).
+**Note:** This project includes a `.nvmrc` file that specifies Node.js 26.13.0. If you use nvm, it will automatically use the correct version when you `cd` into the project directory (with nvm auto-use enabled).
 
 ## 📦 Dependencies
 
@@ -954,7 +963,8 @@ fnm use 26.9.0
 ### Development Dependencies
 
 - **vite** `^8.3.0` - Build tool and dev server
-- **typescript** `^6.0.0` - TypeScript compiler; TypeScript 7 is not yet supported by `typescript-eslint`
+- **@typescript/native** `npm:typescript@7.0.2` - TypeScript 7 compiler used by `yarn type-check` (`tsc --noEmit`)
+- **typescript** `npm:@typescript/typescript6@^6.0.2` - Supported TypeScript 6 API used by `typescript-eslint`
 - **@vitejs/plugin-react** `^6.1.1` - React Fast Refresh (supports decorators)
 - **lit** `^3.3.3` - Web Components library
 - **vitest** `^5.0.1` - Test framework
