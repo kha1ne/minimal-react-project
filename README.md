@@ -7,7 +7,7 @@ A minimalist, well-structured React + Lit hybrid project built with Vite, TypeSc
 - **React 19.3.0** - React with modern hooks and concurrent features
 - **TypeScript 7.0.2** - Native compiler, with the TypeScript 6 API retained for ESLint
 - **Vite 8.3.0** - Fast dev server and build tool
-- **Node.js 26.13.0** - Pinned development runtime (Current release)
+- **Node.js 26.13.1** - Pinned development runtime (Current release)
 - **Yarn Berry 4.18.1** - Modern package management with node_modules
 - **Lit 3.3.3** - Web Components with Shadow DOM isolation
 - **@lit/react** - Lit-React interop
@@ -58,7 +58,7 @@ The project is optimized for modern development:
 
 ### Prerequisites
 
-- **Node.js**: 26.13.0 is the pinned development version; Node.js 24+ is supported
+- **Node.js**: 26.13.1 is the pinned development version; Node.js 24+ is supported
 - **Yarn**: 4.18.1 through Corepack
 
 ### Installation
@@ -930,7 +930,7 @@ The configured editor SDK also uses TypeScript 6.
 
 ### Engine Requirements
 
-- **Node.js**: `>=24.0.0` (26.13.0 pinned in `.nvmrc`; Node 26 is Current, while Node 24 is LTS)
+- **Node.js**: `>=24.0.0` (26.13.1 pinned in `.nvmrc`; Node 26 is Current, while Node 24 is LTS)
 - **Yarn**: `>=4.18.1` (Berry with node_modules)
 
 ### Version Management
@@ -939,15 +939,15 @@ If you need to manage multiple Node.js versions:
 
 ```bash
 # Using nvm (Node Version Manager)
-nvm install 26.13.0
-nvm use 26.13.0
+nvm install 26.13.1
+nvm use 26.13.1
 
 # Using fnm (Fast Node Manager)
-fnm install 26.13.0
-fnm use 26.13.0
+fnm install 26.13.1
+fnm use 26.13.1
 ```
 
-**Note:** This project includes a `.nvmrc` file that specifies Node.js 26.13.0. If you use nvm, it will automatically use the correct version when you `cd` into the project directory (with nvm auto-use enabled).
+**Note:** This project includes a `.nvmrc` file that specifies Node.js 26.13.1. If you use nvm, it will automatically use the correct version when you `cd` into the project directory (with nvm auto-use enabled).
 
 ## 📦 Dependencies
 
